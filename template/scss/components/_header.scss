@@ -1,521 +1,60 @@
 .header {
-    background-color: $color-black;
-    height: 88px;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 30;
-    transition: 0.3s ease-in-out;
-    @include max(1100px){
-        height: 72px;
-    }
-    &.sticky{
-        @include max(1100px){
-            height: 58px;
-        }
-    }
-    &-wrap {
-        @include flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        @include max(1100px){
-            justify-content: space-between;
-        }
-    }
+    &-top {
+        background-color: $color-second;
+        transition: all 0.3s;
 
-    &-logo {
-        margin: 0 80px;
-        width: 193px;
-        height: auto;
-        @include mid-flex;
-        @include max(1100px){
-            width: 130px;
-            margin: 0;
-            margin-left: 28px;
-        }
-     
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-    }
-
-    &-nav {
-        @include max(1100px){
-            display: none;
-        }
-        &-list {
+        &-inner {
             @include flex;
-            align-items: center;
-        }
-
-        &-item {
-            position: relative;
-
-            &:not(:first-child) {
-                margin-left: 80px;
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                bottom: -2px;
-                left: 0;
-                width: 0;
-                height: 1px;
-                background-color: #B89D85;
-                transition: 0.3s ease-in-out;
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                height: 35px;
-                background-color: transparent;
-            }
-
-            &:hover::before {
-                width: 30%;
-            }
-
-            &:hover .header-nav-link {
-                color: #B89D85;
-            }
-
-            &.active .header-nav-link {
-                color: #B89D85;
-            }
-
-            &.active::before {
-                width: 30%;
-            }
-
-            &:hover .header-menu {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0)
-            }
-            &:hover .sub-menu{
-                opacity: 1;
-                transform: translateY(0px);
-                visibility: visible;
-            }
+            justify-content: flex-end;
+            padding: 1rem 0;
         }
 
         &-link {
-            @include flex;
-            align-items: center;
-            font-size: 1.3rem;
-            line-height: 1.5;
-            color: $color-white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s ease-in-out;
-            cursor: pointer;
+            @include fz-14;
+            color: #fff;
+            padding-left: 10px;
 
-            .icon {
-                margin-left: 5px;
-                font-weight: 100;
+            &:nth-child(2) {
+                position: relative;
+                padding-left: 0.5rem;
+                margin-left: 0.5rem;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    height: 11px;
+                    width: 1px;
+                    background-color: #fff;
+                }
             }
-        }
-    }
-
-    &-menu {
-        position: absolute;
-        top: 272%;
-        left: 0;
-        min-width: 210px;
-        background-color: $color-black;
-        z-index: 1;
-        transition: 0.3s ease;
-        &.right{
-            right: 0;
-            left: initial;
-        }
-
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-
-        &-link {
-            display: block;
-            font-size: 1.3rem;
-            line-height: 1.5;
-            text-transform: uppercase;
-            color: $color-white;
-            padding: 12px 16px;
-            transition: 0.2s ease-in-out;
 
             &:hover {
-                background-color: #B89D85;
+                cursor: pointer;
+                transition: 0.3s;
+                color: #DAA761;
+                text-decoration: underline;
+            }
+        }
+
+
+        @include max(520px) {
+            &-inner {
+                justify-content: space-between;
+            }
+
+            &-link {
+                @include fz-12;
             }
         }
     }
 
-    &-mini {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: #E7E2D8;
-        padding: 8px 25px;
-        min-width: 281px;
-        @include flex;
-        align-items: center;
-        transition: 0.3s ease-in-out;
-        
-        @include max(1500px) {
-            padding: 2px 8px;
-        }
-        @include max(1100px){
-            position: initial;
-            min-width: initial;
-            background-color: initial;
-            padding: 0;
-        }
-
-        &-text {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #020204;
-            transition: 0.3s ease-in-out;
-        }
-    }
-}
-.register{
-    &-text{
-        &:not(:first-child){
-            margin-left: 20px;
-        }
-        &:hover{
-            color: $color-tomato
-        }
-    }
-    @include max(1100px){
-        display: none;
-    }
-}
-.user {
-    @include flex;
-    align-items: center;
-    @include max(1100px){
-        display: none;
-    }
-    &-ava {
-        @include flex;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        border-radius: 100rem;
-        margin-right: 7px;
-        cursor: pointer;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-}
-
-.language {
-    position: relative;
-    margin-left: 20px;
-    @include max(1100px){
-        display: none;
-    }
-    &:hover .language-list {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0)
-    }
-
-    &-main {
-        @include flex;
-        align-items: center;
-        cursor: pointer;
-
-        .icon {
-            font-weight: 300;
-            margin-left: 4px;
-        }
-    }
-
-    &-flag {
-        width: 14px;
-        height: 14px;
-        border-radius: 100rem;
-        @include flex;
-        align-items: center;
-        font-size: 1.2rem;
-        color: $color-black;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            margin-right: 4px;
-        }
-    }
-
-    &-list {
-        position: absolute;
-        top: 140%;
-        left: 0;
-        background-color: $color-white;
-        overflow: hidden;
-        transition: 0.3s ease-in-out;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(5px)
-    }
-
-    &-item {
-        @include flex;
-        align-items: center;
-        cursor: pointer;
-        padding: 2px 4px;
-        transition: 0.2s ease-in-out;
-
-        &:not(:last-child) {
-            border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.2);
-        }
-
-        .text {
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            color: $color-black;
-            margin-left: 4px;
-        }
-
-        &:hover {
-            background-color: $color-pri;
-        }
-    }
-}
-
-.search {
-    &-icon {
-        cursor: pointer;
-        margin-left: 20px;
-        position: relative;
-        @include mid-flex;
-        @include max(1100px){
-            margin-left: 10px;
-            padding-left: 10px;
-            border-left: 1px solid rgba($color: $color-white, $alpha: 0.8);
-        }
-
-        .icon {
-            font-weight: 500;
-            font-size: 1.3rem;
-            transition: 0.3s ease-in-out;
-            @include max(1100px){
-                color: $color-white;
-            }
-        }
-
-        &:hover .icon {
-            color: #B89D85;
-        }
-    }
-
-    &-form {
-        position: absolute;
-        top: 110%;
-        right: 10px;
-        transition: 0.3s ease-in-out;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-
-        &.open{
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-    }
-
-    &-wrap {
-        height: 40px;
-        min-width: 280px;
-        @include flex;
-        border: 1px solid $color-black;
-    }
-
-    &-input {
-        width: 100%;
-        padding: 0 12px;
-        font-family: "SVN-Biennale", sans-serif;
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-        outline: none;
-        border: none;
-    }
-
-    &-btn {
-        background-color: $color-black;
-        color: $color-white;
-        text-transform: uppercase;
-        transition: 0.3s ease-in-out;
-        border-left: 1px solid $color-black;
-        cursor: pointer;
-        padding: 0 15px;
-    }   
-
-}
-.sub-menu{
-    position: fixed;
-    top: 88px;
-    height: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #F7F6F4;
-    transition: 0.3s ease-in-out;
-    overflow-y: auto;
-
-    opacity: 0;
-    transform: translateY(5%);
-    visibility: hidden;
-    &-wrap{
-        padding-top:100px;
-        padding-bottom: 200px;
-    }
-}
-.sleep-menu{
-   
-    &-item{
-        width: 50%;
-
-    }
-    &-name{
-        text-transform: uppercase;
-        color: $color-black;
-        margin-bottom: 20px;
-        display: block;
-        transition: 0.3s ease-in-out;
-        &:hover{
-            color: #B89D85;
-        }
-    }
-    &-img{
-        display: block;
-        padding-top: calc((375/570)*100%);
-        position: relative;
-        cursor: pointer;
-        overflow: hidden;
-        img{
-            @include imgCover;
-            transition: 0.3s ease-in-out;
-        }
-        &:hover img{
-            transform: translate(-50%, -50%) scale(1.05);
-        }
-    }
-    &-des{
-        margin-top: 16px;
-        font-size: 1.4rem;
-        line-height: 1.5;
-        letter-spacing: 0.5px;
-        color: $color-black;
-    }
-}
-.project-menu{
-    &-list{
-        margin-bottom: -30px; 
-    }
-    &-item{
-        width: calc(100% /3);
-        margin-bottom: 30px;
-        @include flex;
-         flex-direction: column;
-    }
-    &-name{
-        text-transform: uppercase;
-        color: $color-black;
-        transition: 0.3s ease-in-out;
-        &:hover{
-            color: #B89D85;
-        }
-    }
-    &-des{
-        margin-bottom: 20px;
-    }
-    &-img{
-        display: block;
-        padding-top: calc((243/370)*100%);
-        overflow: hidden;
-        cursor: pointer;
-        position: relative;
-        margin-top: auto;
-        img{
-            @include imgCover;
-            transition: 0.3s ease-in-out;
-        }
-        &:hover img{
-            transform: translate(-50%,-50%) scale(1.05);
-        }
-    }
-}
-.our-menu{
-    &-head{
-        margin-bottom: 25px;
-        .heading{
-            margin-bottom: 0;
-        }
-    }
-    &-button{
-        @include flex;
-        align-items: center;
-        margin-bottom: 30px;
-        &-right{
-            margin-left: auto;
-            @include flex;
-            .btn{
-                margin-left: 10px;
-            }
-        }
-    }
-    &-list{
-        .pro-list{
-            margin-bottom: 30px;
-        }
-        &:not(:last-child){
-            margin-bottom: 60px;
-        }
-    }
-}
-.vis-menu{
-    &-banner{
-        padding-top: calc((375/1170)*100%);
-        position: relative;
-        margin-bottom: 70px;
-        img{
-            @include imgCover;
-        }
-        &-content{
-            width: calc(100% *(4/12));
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            padding: 30px;
-            .heading{
-                margin-bottom: 10px;
-            }
-            
-        }
-        &-text{
-            color: white;
-            letter-spacing: 1px;
+    &-bottom {
+        &-inner {
+            @include mid-flex;
+            justify-content: space-between;
         }
     }
 }

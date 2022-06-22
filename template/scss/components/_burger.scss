@@ -1,43 +1,39 @@
 .burger {
+  display: none;
   cursor: pointer;
-  position: relative;
-  height: 100%;
-  @include mid-flex;
-  @include min(1101px) {
-    display: none;
+
+  @include max (1160px) {
+    display: unset;
+  }
+
+  &-inner {
+    width: 3rem;
+    @include mid-flex();
+    justify-content: end;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+
+  &-line {
+    width: 30px;
+    height: 4px;
+    background: $color-second;
+    opacity: 0.9;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &-line:nth-child(2) {
+    margin: 2px 0;
+  }
+
+  &:hover {
+    .burger-line:nth-child(1) {
+      width: 80%;
+    }
+
+    .burger-line:nth-child(2) {
+      width: 60%;
+    }
   }
 }
-.hamburger{
-  @include flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.hamburger .line {
-  width: 22px;
-  height: 2px;
-  border-radius: 0px;
-  background-color: $color-white;
-  display: block;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.hamburger .line:nth-child(2){
-  margin: 4px 0;
-}
-#hamburger.active .line:nth-child(1) {
-  width: 14px;
-}
-#hamburger.active .line:nth-child(2) {
-}
-
-#hamburger.active .line:nth-child(3) {
-  width: 18px;
-}
-
-// #hamburger.active .line{
-//   -webkit-transform: rotate(30deg);
-//   -ms-transform: rotate(30deg);
-//   -o-transform: rotate(30deg);
-//   transform: rotate(30deg);
-// }
