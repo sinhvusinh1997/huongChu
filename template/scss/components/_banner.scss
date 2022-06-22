@@ -1,0 +1,56 @@
+.banner {
+    &-img {
+        padding-top: calc((400/1728)*100%);
+        position: relative;
+        overflow: hidden;
+        @include max(600px){
+            padding-top: 50%
+        }
+
+        img {
+            @include imgCover;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 50%;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            opacity: 0.6;
+            z-index: 1;
+        }
+    }
+
+    &-posi {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    &-con {
+        @include flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+    }
+
+    &-content {
+        padding: 15px 0 40px 0;
+        @include max(800px){
+            padding-bottom: 20px;
+        }
+    }
+
+    &-heading {
+        color: $color-white;
+        @include max(600px){
+            font-size: 2rem;
+        }
+    }
+}

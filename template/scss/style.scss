@@ -1,11 +1,41 @@
-
+// Library
 @import url("../js/library/fontawesome/css/all.css");
-// @import url();
+@import url("../js/library/aos/aos.css");
+@import url("../js/library/swiper/swiper-bundle.min.css");
+@import url("../js/library/slick/slick.css");
+@import url("../js/library/themify-icons/themify-icons.css");
+@import url("../js/library/select2/select2.min.css");
+@import url("../js/library/wow/animate.min.css");
+@import url("../js/library/magnific/magnific-popup.css");
+@import url("../js/library/gallery/lightgallery.min.css");
+@import url("../js/library/themifi/themify-icons.css");
+@import url("../js/library/range/rangeslider.css");
 
+// Core
 @import "./core/reset";
 @import "./core/variable";
+@import "./core/font";
 @import "./core/mixin";
 @import "./core/base";
+@import "./core/flex";
+@import "./core/animation";
+@import "./core/magnific";
+@import "./core/distance";
 
-@import "./components/header";;
-// @import "./components/navigation";
+
+// Component
+@import "./components/backtotop";
+@import "./components/scroll";
+@import "./components/text";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/burger";
+@import "./components/mobile";
+@import "./components/select2";
+@import "./components/btn";
+@import "./components/breadcrumb";
+@import "./components/pani";
+@import "./components/banner";
+@import "./components/search";
+@import "./components/mirror";
+@import "./components/form";

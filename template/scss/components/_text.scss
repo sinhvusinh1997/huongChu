@@ -1,0 +1,84 @@
+.t-up{
+    text-transform: uppercase;
+}
+.fw5{
+    font-weight: 500;
+}
+.fw6{
+    font-weight: 600;
+}
+.fw7{
+    font-weight: 700;
+}
+.fw8{
+    font-weight: 800;
+}
+.fsi{
+    font-style: italic;
+}
+.tmid{
+    text-align: center;
+}
+.fmid{
+    @include mid-flex;
+}
+.t16{
+    @include fz-16;
+    line-height: 1.6;
+}
+.t24{
+    @include fz-24;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+.t18{
+    @include fz-18;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+.t14{
+    @include fz-14;
+    line-height: 1.6; 
+    letter-spacing: 1px;
+}
+.t20{
+    @include fz-20;
+    line-height: 1.5; 
+    letter-spacing: 1px;
+}
+.t12{
+   font-size: 1.2rem;
+    line-height: 1.5; 
+    letter-spacing: 0.5px;
+}
+.heading{
+    @include fz-30;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-black;
+    &.m-none{
+        margin-bottom: 0;
+    }
+    &.white{
+        color: $color-white;
+    }
+}
+.title{
+    @include fz-20;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color-pri;
+    span{
+        color: #8A6647;
+    }
+}
+.br-pri{
+    background-color: #F7F6F4;
+}
+.t-mid{
+    text-align: center;
+}

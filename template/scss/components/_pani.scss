@@ -1,0 +1,38 @@
+.pani{
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    &-item{
+        width: 49px;
+        height: 45px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        font-weight: 600;
+        color: $color-black;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease-in-out;
+        @include mid-flex;
+        &:not(:first-child){
+            margin-left: 10px;
+            @include max(500px){
+              margin-left: 5px;
+            }
+        }
+        @include max(500px){
+            width: 35px;
+            height: 35px;
+        }
+    }
+    &-number{
+        cursor: pointer;
+        &:hover{
+            color: $color-white;
+            background-color: $color-black;
+        }
+        &.active{
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+}
