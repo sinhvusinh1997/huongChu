@@ -66,16 +66,25 @@
     }
 }
 .title{
-    @include fz-20;
+    @include fz-32;
     line-height: 1.5;
     font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: $color-pri;
+    text-transform: capitalize;
+    color: #000;
     span{
         color: #8A6647;
     }
 }
+
+.name {
+
+}
+
+.para {
+    
+}
+
+
 .br-pri{
     background-color: #F7F6F4;
 }

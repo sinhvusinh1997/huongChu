@@ -1,0 +1,121 @@
+.footer {
+    background-color: #FAF4EF;
+
+    .sec-80 {
+        padding-bottom: 1rem;
+    }
+
+    .logo {
+        width: 270px;
+    }
+
+    .infor {
+        padding-bottom: 8rem;
+        justify-content: space-between;
+
+        &>* {
+            width: calc(3/12 * 100%);
+        }
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 1.5rem;
+    }
+
+    .para {
+        margin-top: 3.6rem;
+    }
+
+    a {
+        color: #000;
+
+        &:hover {
+            cursor: pointer;
+            transition: all 0.3s;
+            color: $color-pri;
+        }
+    }
+
+    .contact {
+        max-width: 20rem;
+
+        .d-item {
+            width: 100%;
+        }
+    }
+
+    .quick {
+        max-width: 22rem;
+
+        .d-item {
+            width: 50%;
+        }
+    }
+
+    .socials {
+        @include socials;
+        margin-top: 2rem;
+
+        a {
+            color: #000;
+        }
+    }
+
+    @include max(1200px) {
+        .infor>* {
+            width: calc(4/12 * 100%);
+            margin-bottom: 2rem;
+        }
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1200px) {
+        .form {
+            margin-left: auto;
+        }
+
+        .infor {
+            padding-left: 5rem;
+            padding-right: 5rem;
+            padding-bottom: 3rem;
+        }
+    }
+
+    @include max(767px) {
+
+        .infor>* {
+            width: calc(6/12 * 100%) !important;
+            max-width: fit-content !important;
+        }
+
+        .quick .d-item {
+            width: 34%;
+        }
+
+        .form {
+            max-width: unset !important;
+        }
+    }
+
+    @include max(580px) {
+        .infor {
+            padding-left: 2rem;
+            padding-bottom: 0;
+        }
+
+        .quick .d-item {
+            width: 100%;
+        }
+
+        .infor>* {
+            width: 80% !important;
+            border-bottom: 1px solid rgba($color-pri, 0.6);
+            padding-bottom: 2rem;
+        }
+
+        .form-group {
+            width: 100%;
+        }
+    }
+}

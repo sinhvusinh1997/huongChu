@@ -1,220 +1,158 @@
-.input {
-    font-family: "SVN-Biennale", sans-serif;
-    padding: 0 15px;
-    width: 100%;
-    border: none;
-    outline: none;
-
-    &.area {
-        padding: 15px;
-        height: 100%;
-    }
-}
-
-.tick {
-    @include flex;
-    align-items: center;
-
-    @include max(500px) {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    &-left {
-        @include flex;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    &-right {
-        margin-left: auto;
-
-        @include max(500px) {
-            margin-left: 0;
-            margin-top: 16px;
-        }
-    }
-
-    &-check:checked~.tick-icon::before {
-        opacity: 1;
-    }
-
-    &-icon {
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-color: white;
-        position: relative;
-        cursor: pointer;
-
-        &.gray {
-            background-color: #C4C4C4;
-        }
-
-        &::before {
-            content: '';
-            @include mid;
-            width: 12px;
-            height: 12px;
-            background-color: $color-black;
-            opacity: 0;
-            transition: 0.1s ease;
-        }
-    }
-
-    &-text {
-        margin-left: 10px;
-        cursor: pointer;
-        flex: 1;
-    }
-
-}
-
-.re {
-    background-color: #F7F6F4;
-    min-height: 68vh;
-
-    &-width {
-        width: 570px;
-        margin: 0 auto;
-        @include max(600px){
-            width: 100%;
-        }
-    }
-
-    &-wrap {
-        padding: 30px 70px;
-        background-color: white;
-        @include max(500px){
-            padding: 15px;
-        }
-    }
-
-    &-head {
-        margin-bottom: 20px;
-
-        .heading {
-            margin-bottom: 0
-        }
-
-        @include flex;
-        align-items: center;
-
-        &-mxh {
-            margin-left: auto;
-            @include flex;
-            align-items: center;
-
-            .text {
-                color: rgba($color: #000000, $alpha: 0.3);
-                margin-right: 7px;
-            }
-
-            &-link {
-                display: block;
-                width: 24px;
-                height: 24px;
-                border-radius: 100rem;
-                margin-left: 9px;
-                transition: 0.3s ease-in-out;
-                &:hover{
-                    transform: translateY(-4px);
-                }
-
-                .icon {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-        }
-    }
-
-    &-block {
-        height: 50px;
-        width: 100%;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        background-color: white;
-        position: relative;
-        margin-bottom: 20px;
-    }
+.form {
+    width: 500px;
 
     &-input {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
-        border: none;
+        max-height: 4rem;
+        padding: 1rem;
+        @include fz-14;
         outline: none;
-        padding: 0 50px 0 15px;
+        background: #FFF;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s;
 
-        font-family: "SVN-Biennale", sans-serif;
-        font-size: 1.6rem;
-        color: #000000;
-        &::placeholder{
-            color: #000000;
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+            @include fz-14;
+        }
+
+        &:focus {
+            border: 1px solid rgba(0, 0, 0, 0.3);
         }
     }
 
-    &-icon {
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
-        z-index: 2;
-        @include mid-flex;
-        cursor: pointer;
+    &-msg {
+        text-indent: 1rem;
+        padding: 1rem 0;
+        display: inline-block;
+        transition: all 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 1.4rem;
+        line-height: 1.5rem;
 
-        .icon {
-            transition: 0.4s ease-in-out;
+        @keyframes animation {
+            0% {
+                text-indent: 1rem;
+
+            }
+
+            25% {
+                text-indent: 1.3rem;
+
+            }
+
+            50% {
+                text-indent: 1rem;
+
+            }
+
+            75% {
+                text-indent: 0.7rem;
+
+            }
+
+            100% {
+                text-indent: 1rem;
+
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            animation: animation 0.5s linear;
         }
     }
 
     &-label {
-        font-size: 1.4rem;
-        line-height: 1.5;
-        color: #000000;
-        background-color: white;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    &-submit {
+        margin-top: 2rem;
+    }
+
+    &-group {
+        position: relative;
+        
+        @media screen and (max-width: 520px) {
+            width: 70%;
+        }
+    }
+
+    &-icon {
         position: absolute;
-        top: -11px;
-        left: 14px;
-        z-index: 2;
-    }
+        top: calc(50% - 2px);
+        right: 10px;
+        transform: translateY(-100%);
+        margin-top: 0;
+        background: transparent;
 
-    &-close {
-        &:hover .icon {
-        }
-    }
-
-    &-eye {
-        transition: 0.1s ease;
-        opacity: 0;
-        visibility: hidden;
-        &.open{
-            opacity: 1;
-            visibility: visible;
-        }
-        &-close{
-        }
-        &-open{
-          
-        }
-    }
-
-    &-note {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 1.4rem;
-        line-height: 1.5;
-        letter-spacing: 0.5px;
-
-        .link {
+        &:hover {
+            transition: all 0.3s;
             cursor: pointer;
-            color: $color-tomato;
-            text-transform: uppercase;
-            font-weight: 600;
-            text-decoration: underline;
+            filter: brightness(0) saturate(100%) invert(20%) sepia(74%) saturate(1204%) hue-rotate(177deg) brightness(97%) contrast(94%);
+        }
+    }
+
+    &-group.checkbox {
+        .form-input {
+            display: none;
+
+            &:checked~.form-mask {
+                background-color: #DAA761;
+            }
+
+            &:checked~.form-label {
+                color: rgba(0, 0, 0, 0.9);
+            }
+        }
+
+        .form-mask {
+            width: 1.4rem;
+            height: 1.4rem;
+            display: inline-block;
+            border: 1px solid #C4C4C4;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+
+    }
+
+    &-group.correct {
+
+        .form-input {
+            border: 1px solid #229954;
+        }
+
+        .form-msg,
+        .form-label {
+            color: #229954;
+        }
+
+        .form-mask {
+            background-color: #229954;
+        }
+    }
+
+    &-group.incorrect {
+
+        .form-input {
+            border: 1px solid #CB4335;
+        }
+
+        .form-msg,
+        .form-label {
+            color: #CB4335;
+        }
+
+        .form-mask {
+            background-color: #CB4335;
         }
     }
 }
