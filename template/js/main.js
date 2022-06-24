@@ -18,24 +18,74 @@ import SelectCusModule from "./module/SelectCusModule.js"
 import HeaderModule from "./module/HeaderModule.js"
 
 window.addEventListener("DOMContentLoaded", () => {
-    MobileModule();
-    AosModule();
-    BtnToTopModule();
-    SwiperModule();
-    CountUpModule();
-    PopupModule();
-    Select2Module();
-    SearchModule();
-    RangeModule();
-    CheckModule();
-    FAQSModule();
-    MayModule();
-    DetailModule();
-    ProductModule();
-    ReModule();
-    SelectCusModule();
+  history.scrollRestoration = "manual";
 
+  HeaderModule();
+  MobileModule();
+  SwiperModule();
 
+  // AosModule();
+  // BtnToTopModule();
+  // CountUpModule();
+  // PopupModule();
+  // Select2Module();
+  // SearchModule();
+  // RangeModule();
+  // CheckModule();
+  // FAQSModule();
+  // MayModule();
+  // DetailModule();
+  // ProductModule();
+  // ReModule();
+  // SelectCusModule();
 
-    // HeaderModule();
+  if (window.innerWidth < 1200) {
+    const mainMenu = document.querySelector("#main-menu");
+    if (mainMenu) {
+      const li1s = mainMenu.children;
+
+      [...li1s].forEach(li1 => {
+        const aTagLi1 = li1.querySelector("a");
+
+        aTagLi1.addEventListener("click", e => {
+          e.preventDefault();
+          // aTagLi1.closest(".menu-item").classList.toggle("active");
+          const subMenu1 = aTagLi1.nextElementSibling;
+
+          if (subMenu1) {
+            if (subMenu1.style.height) {
+              subMenu1.style.height = null;
+            } else {
+              subMenu1.style.height = subMenu1.scrollHeight + "px";
+            }
+
+            const li2s = subMenu1.children;
+            [...li2s].forEach(li2 => {
+
+              const aTagLi2 = li2.querySelector("a");
+
+              aTagLi2.addEventListener("click", e => {
+                aTagLi2.closest(".menu-item").classList.toggle("active");
+                const subMenu2 = aTagLi2.nextElementSibling;
+
+                if (subMenu2) {
+                  if (subMenu2.style.height) {
+                    subMenu2.style.height = null;
+                    subMenu1.style.height = (subMenu1.scrollHeight - subMenu2.scrollHeight) + "px";
+                  } else {
+                    subMenu2.style.height = subMenu2.scrollHeight + "px";
+                    subMenu1.style.height = (subMenu1.scrollHeight + subMenu2.scrollHeight) + "px";
+                  }
+                }
+              })
+            })
+
+          }
+
+        })
+      })
+
+    }
+  }
+
 })

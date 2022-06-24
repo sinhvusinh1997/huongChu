@@ -1,4 +1,11 @@
 .header {
+    z-index: 11;
+    background-color: rgba(#fff, 0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
     &-top {
         background-color: $color-second;
         transition: all 0.3s;
@@ -10,35 +17,29 @@
         }
 
         &-link {
-            @include fz-14;
             color: #fff;
-            padding-left: 10px;
+            padding-left: 10px; 
 
             &:nth-child(2) {
                 position: relative;
-                padding-left: 0.5rem;
-                margin-left: 0.5rem;
-    
+                margin-left: 1rem;
+
                 &::after {
                     content: "";
                     position: absolute;
-                    top: 50%;
                     left: 0;
+                    top: 50%;
                     transform: translateY(-50%);
-                    height: 11px;
+                    height: 12px;
                     width: 1px;
                     background-color: #fff;
                 }
             }
-
-            &:hover {
-                cursor: pointer;
-                transition: 0.3s;
-                color: #DAA761;
-                text-decoration: underline;
-            }
         }
 
+        .socials {
+            @include socials;
+        }
 
         @include max(520px) {
             &-inner {
@@ -52,9 +53,26 @@
     }
 
     &-bottom {
+        transition: all 0.3s;
         &-inner {
             @include mid-flex;
             justify-content: space-between;
+        }
+    }
+
+    &-logo {
+        width: 120px;
+    }
+
+    &-menu {
+        margin-right: 2.5rem;
+    }
+
+    &-action {
+        display: none;
+
+        @include max(1200px) {
+            display: block;
         }
     }
 }
