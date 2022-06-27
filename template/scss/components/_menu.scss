@@ -1,4 +1,6 @@
 .menu {
+    @include fz-14;
+    
     &-inner {
         @include center-flex;
         flex-wrap: wrap;

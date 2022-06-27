@@ -14,7 +14,7 @@
         transition: all 0.3s;
 
         &::placeholder {
-            color: rgba(0, 0, 0, 0.5);
+            color: rgba(0, 0, 0, 0.3);
             @include fz-14;
         }
 
@@ -25,38 +25,33 @@
 
     &-msg {
         text-indent: 1rem;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         display: inline-block;
         transition: all 0.3s;
         opacity: 0;
         visibility: hidden;
-        font-size: 1.4rem;
-        line-height: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
 
         @keyframes animation {
             0% {
                 text-indent: 1rem;
-
             }
 
             25% {
                 text-indent: 1.3rem;
-
             }
 
             50% {
                 text-indent: 1rem;
-
             }
 
             75% {
                 text-indent: 0.7rem;
-
             }
 
             100% {
                 text-indent: 1rem;
-
             }
         }
 
@@ -86,7 +81,7 @@
 
     &-icon {
         position: absolute;
-        top: calc(50% - 2px);
+        top: 6px;
         right: 10px;
         transform: translateY(-100%);
         margin-top: 0;

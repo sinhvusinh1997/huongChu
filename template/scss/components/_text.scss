@@ -1,93 +1,116 @@
-.t-up{
+.t-up {
     text-transform: uppercase;
 }
-.fw5{
+
+.fw5 {
     font-weight: 500;
 }
-.fw6{
+
+.fw6 {
     font-weight: 600;
 }
-.fw7{
+
+.fw7 {
     font-weight: 700;
 }
-.fw8{
+
+.fw8 {
     font-weight: 800;
 }
-.fsi{
+
+.fsi {
     font-style: italic;
 }
-.tmid{
+
+.tmid {
     text-align: center;
 }
-.fmid{
+
+.fmid {
     @include mid-flex;
 }
-.t16{
+
+.t16 {
     @include fz-16;
     line-height: 1.6;
 }
-.t24{
+
+.t24 {
     @include fz-24;
     line-height: 1.5;
     letter-spacing: 1px;
 }
-.t18{
+
+.t18 {
     @include fz-18;
     line-height: 1.5;
     letter-spacing: 1px;
 }
-.t14{
+
+.t14 {
     @include fz-14;
-    line-height: 1.6; 
+    line-height: 1.6;
     letter-spacing: 1px;
 }
-.t20{
+
+.t20 {
     @include fz-20;
-    line-height: 1.5; 
+    line-height: 1.5;
     letter-spacing: 1px;
 }
-.t12{
-   font-size: 1.2rem;
-    line-height: 1.5; 
+
+.t12 {
+    font-size: 1.2rem;
+    line-height: 1.5;
     letter-spacing: 0.5px;
 }
-.heading{
+
+.heading {
     @include fz-30;
     line-height: 1.5;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $color-black;
-    &.m-none{
+
+    &.m-none {
         margin-bottom: 0;
     }
-    &.white{
+
+    &.white {
         color: $color-white;
     }
 }
-.title{
+
+.title {
     @include fz-32;
     line-height: 1.5;
     font-weight: 600;
     text-transform: capitalize;
     color: #000;
-    span{
+
+    span {
         color: #8A6647;
     }
 }
 
 .name {
-
+    @include fz-20;
+    font-weight: 600;
+    color: #000;
+    font-family: 'Playfair Display';
+    font-style: normal;
 }
 
 .para {
-    
+    @include excerpt(1.6rem);
 }
 
 
-.br-pri{
+.br-pri {
     background-color: #F7F6F4;
 }
-.t-mid{
+
+.t-mid {
     text-align: center;
 }

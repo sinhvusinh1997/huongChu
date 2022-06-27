@@ -1,7 +1,7 @@
 .footer {
     background-color: #FAF4EF;
 
-    .sec-80 {
+    .pd-80 {
         padding-bottom: 1rem;
     }
 
@@ -30,6 +30,7 @@
 
     a {
         color: #000;
+        @include fz-14;
 
         &:hover {
             cursor: pointer;
