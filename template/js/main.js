@@ -1,7 +1,11 @@
-import MobileModule from "./module/MobileModule.js"
+import MobileModule from "./module/MobileModule.js";
+import SwiperModule from "./module/SwiperModule.js";
+import HeaderModule from "./module/HeaderModule.js";
+import ScrollToModule from "./module/ScrollToModule.js";
+import ValidationModule from "./module/ValidationModule.js";
+
 import AosModule from "./module/AosModule.js"
 import BtnToTopModule from "./module/BtnToTopModule.js"
-import SwiperModule from "./module/SwiperModule.js"
 import CountUpModule from "./module/CountUpModule.js"
 import PopupModule from "./module/PopupModule.js"
 import Select2Module from "./module/Select2Module.js"
@@ -15,28 +19,44 @@ import ProductModule from "./module/ProductModule.js"
 import ReModule from "./module/ReModule.js"
 import SelectCusModule from "./module/SelectCusModule.js"
 
-import HeaderModule from "./module/HeaderModule.js"
 
-window.addEventListener("DOMContentLoaded", () => {
+// window.addEventListener("DOMContentLoaded", () => {
+//   history.scrollRestoration = "manual";
+
+//   HeaderModule();
+//   MobileModule();
+//   SwiperModule();
+//   ScrollToModule();
+//   // AosModule();
+//   // BtnToTopModule();
+//   // CountUpModule();
+//   // Select2Module();
+//   // SearchModule();
+//   // RangeModule();
+//   // CheckModule();
+//   // FAQSModule();
+//   // MayModule();
+//   // DetailModule();
+//   // ProductModule();
+//   // ReModule();
+//   // SelectCusModule();
+// });
+
+const afterDOMLoaded = () => {
   history.scrollRestoration = "manual";
 
   HeaderModule();
   MobileModule();
   SwiperModule();
+  ScrollToModule();
+  ValidationModule("#request-form");
+  PopupModule();
 
-  // AosModule();
-  // BtnToTopModule();
-  // CountUpModule();
-  // PopupModule();
-  // Select2Module();
-  // SearchModule();
-  // RangeModule();
-  // CheckModule();
-  // FAQSModule();
-  // MayModule();
-  // DetailModule();
-  // ProductModule();
-  // ReModule();
-  // SelectCusModule();
 
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", afterDOMLoaded)
+} else {
+  afterDOMLoaded();
+}

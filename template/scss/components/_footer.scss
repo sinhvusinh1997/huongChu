@@ -74,6 +74,7 @@
     @media screen and (min-width: 767px) and (max-width: 1200px) {
         .form {
             margin-left: auto;
+            width: calc(6/12 * 100%);
         }
 
         .infor {

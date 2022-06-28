@@ -146,6 +146,7 @@
             z-index: 11;
             padding: 0 0.5rem;
             border-right: 4px solid $color-pri;
+            align-items: stretch;
 
             &>* {
                 position: relative;
@@ -169,14 +170,15 @@
 
         &-list {
             flex-direction: column;
-            height: 700px;
+            height: 60%;
             align-items: baseline;
             justify-content: flex-start;
             padding-top: 2rem;
             overflow-x: hidden;
             overflow-y: scroll;
             order: 3;
-            margin-top: -10rem;
+            margin-top: -16%;
+
         }
 
         &-footer {
@@ -187,6 +189,7 @@
 
             .brand-address {
                 margin-bottom: 1rem;
+                text-align: end
             }
 
             i {

@@ -49,6 +49,10 @@
 
     @include max(968px) {
         height: calc(1200/1920 * 100vw);
+
+        &-text {
+            top: 14rem;
+        }
     }
 
     @include max(767px) {

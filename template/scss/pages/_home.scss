@@ -53,6 +53,17 @@
         }
     }
 
+    .skill,
+    .student {
+        .arrow {
+            background-color: $color-second;
+
+            i {
+                color: $color-second;
+            }
+        }
+    }
+
     .course,
     .skill,
     .student {
@@ -217,10 +228,24 @@
             border-top-left-radius: $border-radius-img;
             border-top-right-radius: $border-radius-img;
             margin-bottom: 5rem;
+
+            &:hover {
+                .course-img {
+                    transition: 0.3s;
+                    box-shadow: $boxShadow;
+
+                    img {
+                        transition: 0.3s;
+                        transform: scale(1.2)
+                    }
+                }
+            }
+
         }
 
         &-img {
             border-radius: $border-radius-img;
+            overflow: hidden;
 
             img {
                 border-radius: $border-radius-img;
@@ -275,6 +300,10 @@
         .para {
             -webkit-line-clamp: 6;
             margin-top: 3rem;
+        }
+
+        &-img {
+            animation: Spinner 7s linear infinite;
         }
 
         @include max(767px) {

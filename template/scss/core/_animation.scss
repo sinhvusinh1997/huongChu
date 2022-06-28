@@ -282,6 +282,7 @@
     transform: scale(0.95, 1.05);
   }
 }
+
 @keyframes jellyTranForm {
   25% {
     transform: translate(-50%, -50%) scale(0.9, 1.1);
@@ -295,7 +296,9 @@
     transform: translate(-50%, -50%) scale(0.95, 1.05);
   }
 }
+
 @keyframes jittery {
+
   5%,
   50% {
     transform: scale(1);
@@ -329,8 +332,68 @@
     transform: scale(1.05) rotate(0);
   }
 }
+
 @keyframes pulse {
   from {
     box-shadow: 0 0 0 0 var($color-tomato);
   }
+}
+
+@-webkit-keyframes flip-scale-up-ver {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(1) rotateY(0);
+    transform: translate(-50%, -50%) scale(1) rotateY(0);
+  }
+
+  25% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5) rotateY(90deg);
+    transform: translate(-50%, -50%) scale(1.5) rotateY(90deg);
+  }
+
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5) rotateY(180deg);
+    transform: translate(-50%, -50%) scale(1.5) rotateY(180deg);
+  }
+
+  75% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5) rotateY(270deg);
+    transform: translate(-50%, -50%) scale(1.5) rotateY(270deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1) rotateY(360deg);
+    transform: translate(-50%, -50%) scale(1) rotateY(360deg);
+  }
+}
+
+@keyframes flip-scale-up-ver {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(1) rotateY(0);
+    transform: translate(-50%, -50%) scale(1) rotateY(0);
+  }
+
+  25% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5) rotateY(90deg);
+    transform: translate(-50%, -50%) scale(1.5) rotateY(90deg);
+  }
+
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5) rotateY(180deg);
+    transform: translate(-50%, -50%) scale(1.5) rotateY(180deg);
+  }
+
+  75% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5) rotateY(270deg);
+    transform: translate(-50%, -50%) scale(1.5) rotateY(270deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1) rotateY(360deg);
+    transform: translate(-50%, -50%) scale(1) rotateY(360deg);
+  }
+}
+
+.flip-scale-up-ver {
+  -webkit-animation: flip-scale-up-ver 0.5s linear both;
+  animation: flip-scale-up-ver 0.5s linear both;
 }

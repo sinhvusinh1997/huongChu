@@ -103,7 +103,46 @@ select {
   margin-bottom: -15rem;
 }
 
+.arrow {
+  position: absolute;
+  top: -6rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-pri;
+  @include cir(8rem);
+  z-index: 3;
+  @include mid-flex;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    @include cir(70%);
+    background-color: rgba(251, 246, 239, 0.3);
+    box-shadow: none;
+    z-index: 1;
+  }
+  
+  i {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $color-pri;
+    z-index: 2;
+  }
+  
+  &:hover {
+    cursor: pointer;
+    
+    &::after {
+      transition: 0.5s;
+      box-shadow: 0 0 20px 3px rgba(#000, 0.2);
+      background-color: rgba(251, 246, 239, 0.6);
+    }
+  }
 
+  @include max(767px) {
+    @include cir(6rem);
+  }
+}
 
 .no-scroll {
   touch-action: none;

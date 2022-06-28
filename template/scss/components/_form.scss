@@ -81,9 +81,9 @@
 
     &-icon {
         position: absolute;
-        top: 6px;
+        top: 50%;
         right: 10px;
-        transform: translateY(-100%);
+        transform: translateY(-80%);
         margin-top: 0;
         background: transparent;
 
@@ -99,7 +99,7 @@
             display: none;
 
             &:checked~.form-mask {
-                background-color: #DAA761;
+                background-color: $color-pri;
             }
 
             &:checked~.form-label {
@@ -122,32 +122,23 @@
     &-group.correct {
 
         .form-input {
-            border: 1px solid #229954;
+            border: 1px solid $color-correct;
         }
 
-        .form-msg,
-        .form-label {
-            color: #229954;
-        }
-
-        .form-mask {
-            background-color: #229954;
+        .form-msg {
+            color: $color-correct;
         }
     }
 
     &-group.incorrect {
 
         .form-input {
-            border: 1px solid #CB4335;
+            border: 1px solid $color-incorrect;
         }
 
         .form-msg,
         .form-label {
-            color: #CB4335;
-        }
-
-        .form-mask {
-            background-color: #CB4335;
+            color: $color-incorrect;
         }
     }
 }

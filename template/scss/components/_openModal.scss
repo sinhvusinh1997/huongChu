@@ -4,28 +4,70 @@
     width: 100vw;
     height: 100vh;
     z-index: 12;
+    transition: all 0.3s;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s;
 
     &.active {
         opacity: 1;
         visibility: visible;
+        transform: scale(1);
+        transition: 0.3s;
+
+        .modal-content {
+            -webkit-animation: flip-scale-up-ver 0.5s linear both;
+            animation: flip-scale-up-ver 0.5s linear both;
+        }
     }
 
     &-overlay {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.9);
     }
 
     &-content {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 80%;
-        height: 100%;
+        @include mid;
+        width: 300px;
+        height: 300px;
         background-color: #fff;
+        transition: 0.5s;
+        border-radius: 30px;
+
+        i {
+            @include mid;
+            @include fz-140;
+        }
+
+        .notify-detail {
+            position: absolute;
+            bottom: 5%;
+            text-align: center;
+            width: 100%;
+            font-size: 2rem;
+        }
+    }
+
+    &.incorrect {
+        .modal-content {
+            border: 2px solid $color-incorrect;
+        }
+
+        i,
+        .notify-detail {
+            color: $color-incorrect;
+        }
+    }
+
+    &.correct {
+        .modal-content {
+            border: 2px solid $color-correct;
+        }
+
+        i,
+        .notify-detail {
+            color: $color-correct;
+        }
     }
 }
