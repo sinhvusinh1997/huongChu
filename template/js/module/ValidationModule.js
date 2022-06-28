@@ -43,7 +43,7 @@ function textValidate(group, objData) {
 				break;
 			case "email":
 				const msgChoose = isEmail(value) ? "Validate!" : "MUST email format!";
-				const className = isEmail(value) ? "correct" : "correct";
+				const className = isEmail(value) ? "correct" : "incorrect";
 
 				showResult(msg, msgChoose, group, className);
 				objData[typeInput] = isEmail(value) ? value : null;
@@ -63,9 +63,7 @@ function textValidate(group, objData) {
 			default:
 				break;
 		}
-
 	});
-
 
 	inputField.addEventListener("keydown", () => {
 		group.classList.remove("incorrect");
@@ -89,35 +87,41 @@ export default function ValidationModule(idForm) {
 	const targetForm = document.querySelector(idForm);
 	const objData = {};
 
+	
 	const getFormGroup = targetForm.querySelectorAll(".form-group");
 	const getTextInput = [...getFormGroup].filter(item => item.classList.contains("text"));
 	const getCheckBoxInput = [...getFormGroup].filter(item => item.classList.contains("checkbox"));
 	const getButton = targetForm.querySelector("Button");
+	
 
-	getTextInput.forEach(group => {
-		textValidate(group, objData);
-	});
+	if (getTextInput.length > 0) {
+		getTextInput.forEach(group => {
+			textValidate(group, objData);
+		});
+	}
 
-	getCheckBoxInput.forEach(group => {
-		checkboxValidate(group, objData);
-	});
+	if (getCheckBoxInput.length > 0) {
+		getCheckBoxInput.forEach(group => {
+			checkboxValidate(group, objData);
+		});
+	}
 
-
-	getButton.addEventListener("click", e => {
-		e.preventDefault()
-		let rs = true;
-
-		if ((Object.keys(objData).length == 0)) {
-			rs = false;
-		}
-
-		for (const key in objData) {
-			if (!objData[key]) {
+	if (getButton) {
+		getButton.addEventListener("click", e => {
+			e.preventDefault()
+			let rs = true;
+	
+			if ((Object.keys(objData).length == 0)) {
 				rs = false;
-				break;
 			}
-		}
-		popupValidate(rs);
-	})
-
+	
+			for (const key in objData) {
+				if (!objData[key]) {
+					rs = false;
+					break;
+				}
+			}
+			popupValidate(rs);
+		})
+	}
 }
