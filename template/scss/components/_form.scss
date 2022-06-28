@@ -1,5 +1,5 @@
 .form {
-    width: 500px;
+    max-width: 500px;
 
     &-input {
         width: 100%;
@@ -12,6 +12,7 @@
         border: 1px solid transparent;
         color: rgba(0, 0, 0, 0.5);
         transition: all 0.3s;
+        margin-bottom: 2rem;
 
         &::placeholder {
             color: rgba(0, 0, 0, 0.3);
@@ -25,7 +26,6 @@
 
     &-msg {
         text-indent: 1rem;
-        padding: 0.5rem 0;
         display: inline-block;
         transition: all 0.3s;
         opacity: 0;
@@ -33,32 +33,20 @@
         font-size: 1.2rem;
         line-height: 1.2rem;
 
-        @keyframes animation {
-            0% {
-                text-indent: 1rem;
-            }
-
-            25% {
-                text-indent: 1.3rem;
-            }
-
-            50% {
-                text-indent: 1rem;
-            }
-
-            75% {
-                text-indent: 0.7rem;
-            }
-
-            100% {
-                text-indent: 1rem;
-            }
-        }
+        position: absolute;
+        right: 10px;
+        top: 0;
+        transform: translateY(-50%);
+        background-color: #fff;
+        padding: 4px 2rem;
+        border-radius: 20px;
+        border: 1px solid;
 
         &.active {
             opacity: 1;
             visibility: visible;
-            animation: animation 0.5s linear;
+            -webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse ;
+	        animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse ;
         }
     }
 
@@ -73,10 +61,6 @@
 
     &-group {
         position: relative;
-        
-        @media screen and (max-width: 520px) {
-            width: 70%;
-        }
     }
 
     &-icon {
@@ -115,8 +99,6 @@
             border-radius: 5px;
             transition: all 0.3s;
         }
-
-
     }
 
     &-group.correct {

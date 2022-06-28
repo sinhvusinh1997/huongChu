@@ -1,6 +1,5 @@
 .header {
     z-index: 11;
-    background-color: rgba(#fff, 0.6);
     position: fixed;
     width: 100%;
     top: 0;
@@ -18,7 +17,7 @@
 
         &-link {
             color: #fff;
-            padding-left: 10px; 
+            padding-left: 10px;
 
             &:nth-child(2) {
                 position: relative;
@@ -50,10 +49,37 @@
                 @include fz-12;
             }
         }
+
+        @include max(400px) {
+            &-inner {
+                flex-wrap: wrap;
+                padding: 0.5rem 0;
+            }
+
+            &-link:nth-child(1) {
+                width: 50%;
+            }
+
+            &-link:nth-child(2) {
+                width: 60%;
+                margin-left: 0;
+
+                &::after {
+                    content: none;
+                }
+            }
+
+            .socials {
+                text-align: end;
+            }
+
+        }
     }
 
     &-bottom {
         transition: all 0.3s;
+        background-color: rgba(#fff, 0.6);
+
         &-inner {
             @include mid-flex;
             justify-content: space-between;

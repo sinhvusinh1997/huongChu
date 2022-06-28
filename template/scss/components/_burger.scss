@@ -11,7 +11,7 @@
 
   &-line {
     width: 30px;
-    height: 4px;
+    height: 3px;
     background: $color-second;
     opacity: 0.9;
     border-radius: 10px;
@@ -19,7 +19,7 @@
   }
 
   &-line:nth-child(2) {
-    margin: 2px 0;
+    margin: 0.3rem 0;
   }
 
   &:hover,

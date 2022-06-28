@@ -1,11 +1,14 @@
 .user {
     &-default {
-        display: none;
+        // display: none;
+        color: #000;
     }
 
     &-login {
         @include mid-flex();
         position: relative;
+
+        display: none;
 
         i {
             font-size: 1.6rem;

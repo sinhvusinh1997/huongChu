@@ -1,6 +1,6 @@
 .menu {
     @include fz-14;
-    
+
     &-inner {
         @include center-flex;
         flex-wrap: wrap;
@@ -53,6 +53,13 @@
                     transition-delay: 0ms;
                     transform: translateY(-50%) rotate(-90deg);
                 }
+            }
+        }
+
+        &.current-page {
+            a {
+                font-weight: 700;
+                color: $color-pri;
             }
         }
     }
@@ -166,6 +173,7 @@
         &-logo {
             display: block;
             order: 1;
+            align-self: flex-end;
         }
 
         &-list {
@@ -202,10 +210,16 @@
             order: 2;
             align-self: self-start;
             display: flex;
-            padding-left: 1rem;
+            justify-content: flex-end;
+            padding-right: 3rem;
 
             .user-more {
                 right: -5rem;
+            }
+
+            .btn {
+                padding: 5px 2rem;
+                color: #fff;
             }
         }
 

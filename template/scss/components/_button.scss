@@ -53,6 +53,10 @@
         padding: 0.8rem 1.6rem;
         font-size: 1.2rem;
     }
+
+    @include max(400px) {
+        padding: 0.9rem 2rem;
+    }
 }
 
 .ctrl-button {

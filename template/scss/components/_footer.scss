@@ -64,6 +64,13 @@
         }
     }
 
+    .form {
+        &-input {
+            max-height: 5rem;
+            height: 4.5rem;
+        }
+    }
+
     @include max(1200px) {
         .infor>* {
             width: calc(4/12 * 100%);
@@ -101,8 +108,16 @@
     }
 
     @include max(580px) {
+        &-inner {
+            margin: 0 3rem;
+        }
+
+        .logo {
+            margin: auto;
+        }
+
         .infor {
-            padding-left: 2rem;
+            padding-left: 0rem;
             padding-bottom: 0;
         }
 
@@ -111,7 +126,7 @@
         }
 
         .infor>* {
-            width: 80% !important;
+            width: 100% !important;
             border-bottom: 1px solid rgba($color-pri, 0.6);
             padding-bottom: 2rem;
         }
@@ -119,5 +134,30 @@
         .form-group {
             width: 100%;
         }
+
+        .para {
+            -webkit-line-clamp: unset;
+            width: 100%;
+        }
+
+        .quick,
+        .contact {
+            .d-item {
+                width: 50% !important;
+            }
+        }
     }
+
+    @include max(510px) {
+        &-inner {
+            margin: 0 2rem;
+        }
+
+        .contact {
+            .d-item {
+                width: 100% !important;
+            }
+        }
+    }
+
 }

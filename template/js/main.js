@@ -49,7 +49,7 @@ const afterDOMLoaded = () => {
   MobileModule();
   SwiperModule();
   ScrollToModule();
-  // ValidationModule("#request-form");
+  ValidationModule("#request-form");
   ValidationModule("#footer-form");
   PopupModule();
 

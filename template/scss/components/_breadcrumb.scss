@@ -1,21 +1,3 @@
 .breadcumb{
-    @include flex;
-    align-items: center;
-    &-link{
-        color: $color-white;
-        font-size: 1.6rem;
-        line-height: 1.4;
-        transition: 0.3s ease-in-out;
-        cursor: pointer;
-        &:hover{
-            color: #B89D85;
-        }
-        @include max(600px){
-            font-size: 1.3rem;
-        }
-    }
-    &-dot{
-        color: $color-white;
-        margin: 0 8px;
-    }
+    // top: unset;
 }

@@ -201,6 +201,17 @@
                 height: 30rem;
             }
         }
+
+        @include max(400px) {
+            .left {
+                padding-left: 4rem;
+                padding-top: 1rem;
+            }
+
+            .para {
+                -webkit-line-clamp: 7;
+            }
+        }
     }
 
     .course {
@@ -272,6 +283,8 @@
                 color: #fff;
             }
         }
+
+
     }
 
     .skill {
@@ -304,11 +317,13 @@
 
         &-img {
             animation: Spinner 7s linear infinite;
+
         }
 
         @include max(767px) {
             .para {
-                margin: 3rem 5rem;
+                margin: 2rem 7rem;
+                text-align: justify;
             }
 
             .d-flex {
@@ -317,13 +332,27 @@
 
             .skill-item {
                 position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 300px;
+                    height: 1px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: $color-pri;
+                }
+
+                &:last-child::after {
+                    content: none;
+                }
             }
 
-            a.skills-img {
+            a.skill-img {
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                top: -2rem;
+                left: 4rem;
                 opacity: 0.3;
 
                 img {
@@ -332,9 +361,22 @@
             }
         }
 
+        @include max(580px) {
+            .para {
+                margin: 2rem 3rem;
+            }
+        }
+
+        @include max(400px) {
+            .para {
+                margin: 2rem 0rem;
+            }
+        }
+
     }
 
     .student {
+        padding-bottom: 6rem;
 
         &-wrapper {
             text-align: center
@@ -357,6 +399,10 @@
 
             i {
                 color: $color-pri;
+            }
+
+            @include max(980px) {
+                display: none;
             }
         }
     }

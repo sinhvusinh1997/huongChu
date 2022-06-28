@@ -312,7 +312,7 @@
             <i class="fal fa-chevron-down"></i>
          </div>
          <div class="container">
-            <div class="student-inner pd-bot-120">
+            <div class="student-inner">
                <h1 class="title wow animate__fadeInDown">What Our Students Say</h1>
                <div class="swiper">
                   <ul class="swiper-wrapper">
@@ -515,17 +515,15 @@
    <script src="./js/main.js" type="module"></script>
 
    <script>
-      wow = new WOW(
-         {
-            // boxClass: 'wow',      
-            // animateClass: 'animated', 
-            offset: 0,
-            mobile: true,
-            live: true
-         }
-      )
+      wow = new WOW({
+          boxClass: 'wow',
+          animateClass: 'animate__animated',
+          offset: 0,
+          mobile: false,
+          live: true,
+      });
       wow.init();
-   </script>
+  </script>
 </body>
 
 </html>

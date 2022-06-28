@@ -39,10 +39,15 @@ select {
 
 .main {
   min-height: 68vh;
+  margin-top: 4.3rem;
 
   &.pd {
     padding-top: 112px;
     padding-bottom: 80px;
+  }
+
+  @include max(400px) {
+    margin-top: 5.5rem;
   }
 }
 
@@ -91,17 +96,24 @@ select {
 .pd-bot-120 {
   padding-bottom: 12rem;
   @include max(1080px) {
-
   }
 
   @include max(767px) {
+  }
+}
 
+.pd-bot-220 {
+  padding-bottom: 22rem;
+
+  @include max(500px) {
+    padding-bottom: 18rem;
   }
 }
 
 .mb-neg {
   margin-bottom: -15rem;
 }
+
 
 .arrow {
   position: absolute;
