@@ -346,6 +346,7 @@ img {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 
 .effectShine {
@@ -2472,6 +2473,7 @@ img {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  display: block;
   color: #fff;
   background-color: #DAA761;
 }
@@ -2554,6 +2556,10 @@ img {
 .ctrl-button .ctrl-btn {
   font-size: 3rem;
   z-index: 2;
+  position: unset;
+  height: 100%;
+  top: unset;
+  margin-top: unset;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -2574,6 +2580,7 @@ img {
 }
 
 .ctrl-button .swiper-pagination {
+  position: unset;
   bottom: unset;
   z-index: 1;
 }
@@ -4166,6 +4173,25 @@ img {
   padding-top: 4rem;
 }
 
+.main.couse-page .ctrl-button,
+.main.my-course-page .ctrl-button {
+  min-width: 16rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 4;
+}
+
+.main.couse-page .ctrl-button .ctrl-btn i,
+.main.my-course-page .ctrl-button .ctrl-btn i {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000;
+}
+
 .main.couse-page .course .container {
   z-index: 3;
 }
@@ -4177,23 +4203,6 @@ img {
 .main.couse-page .course-item {
   margin-bottom: 0;
   height: calc((100% - 30px) / 2) !important;
-}
-
-.main.couse-page .course .ctrl-button {
-  min-width: 16rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  z-index: 4;
-}
-
-.main.couse-page .course .ctrl-button .ctrl-btn i {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #000;
 }
 
 @media screen and (max-width: 1200px) {
@@ -4247,6 +4256,101 @@ img {
 @media screen and (max-width: 400px) {
   .main.couse-page .course-list {
     height: 90rem;
+  }
+}
+
+.main.my-course-page .my-course .container {
+  z-index: 3;
+}
+
+.main.my-course-page .my-course-item {
+  width: calc(4/12 * 100% - 30px);
+  background: #FFF;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.main.my-course-page .my-course-item:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  -webkit-box-shadow: 8px 16px 32px rgba(0, 67, 101, 0.1);
+          box-shadow: 8px 16px 32px rgba(0, 67, 101, 0.1);
+}
+
+.main.my-course-page .my-course .time {
+  color: #7C7C7C;
+  text-indent: 2.4rem;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+}
+
+.main.my-course-page .my-course .name {
+  font-size: 1.8rem;
+  text-indent: 2.4rem;
+  margin-bottom: 1.1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main.my-course-page .my-course .name {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main.my-course-page .my-course .name {
+    font-size: 1.5rem;
+  }
+}
+
+.main.my-course-page .my-course .amount-lesson {
+  color: #0B4A78;
+  text-indent: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.main.my-course-page .my-course .amount-lesson img {
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.main.my-course-page .my-course .btn {
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F8F8F8), color-stop(47.4%, #FFFFFF), to(#F8F8F8));
+  background-image: linear-gradient(180deg, #F8F8F8 0%, #FFFFFF 47.4%, #F8F8F8 100%);
+  color: #DAA761;
+  width: 100%;
+  border-radius: unset;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 8px 24px;
+}
+
+.main.my-course-page .my-course .btn::before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.main.my-course-page .my-course .btn::after {
+  background-color: transparent;
+}
+
+.main.my-course-page .my-course .ctrl-button {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .main.my-course-page .my-course .pd-80 {
+    padding: 3rem 0 7rem;
+  }
+  .main.my-course-page .my-course-item {
+    width: calc(6/12 * 100% - 30px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main.my-course-page .my-course-item {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

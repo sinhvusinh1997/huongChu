@@ -157,9 +157,6 @@ select {
   }
 }
 
-
-
-
 .no-scroll {
   touch-action: none;
   -webkit-overflow-scrolling: none;
@@ -174,6 +171,7 @@ iframe {
 img {
   max-width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .effectShine {

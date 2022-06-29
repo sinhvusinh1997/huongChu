@@ -5,7 +5,8 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
-
+    display: block;
+    
     color: #fff;
     background-color: $color-pri;
 
@@ -68,6 +69,10 @@
     .ctrl-btn {
         @include fz-30;
         z-index: 2;
+        position: unset;
+        height: 100%;
+        top: unset;
+        margin-top: unset;
     }
 
     .swiper-button-next:after,
@@ -76,6 +81,7 @@
     }
 
     .swiper-pagination {
+        position: unset;
         bottom: unset;
         z-index: 1;
     }
