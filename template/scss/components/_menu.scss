@@ -57,9 +57,13 @@
         }
 
         &.current-page {
-            a {
+            &>a {
                 font-weight: 700;
                 color: $color-pri;
+                
+                i {
+                    color: #000;
+                }
             }
         }
     }
@@ -269,6 +273,7 @@
                     font-size: 1.6rem;
                     padding: 0.8rem 1rem;
                 }
+
             }
         }
     }

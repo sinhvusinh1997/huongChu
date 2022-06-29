@@ -404,6 +404,26 @@ img {
   opacity: 0;
 }
 
+/*
+  *Swiper pagination custome
+*/
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: #000;
+  opacity: 0.8;
+  background-color: transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  color: #DAA761;
+  opacity: 1;
+}
+
 .d-flex {
   display: -moz-flex;
   display: -ms-flex;
@@ -1644,6 +1664,9 @@ img {
     max-width: -moz-fit-content !important;
     max-width: fit-content !important;
   }
+  .footer .infor {
+    padding-bottom: 0rem;
+  }
   .footer .quick .d-item {
     width: 34%;
   }
@@ -2641,9 +2664,13 @@ img {
           transform: translateY(-50%) rotate(-90deg);
 }
 
-.menu-item.current-page a {
+.menu-item.current-page > a {
   font-weight: 700;
   color: #DAA761;
+}
+
+.menu-item.current-page > a i {
+  color: #000;
 }
 
 .menu-overlay {
@@ -4137,5 +4164,89 @@ img {
 
 .main.about-page .request {
   padding-top: 4rem;
+}
+
+.main.couse-page .course .container {
+  z-index: 3;
+}
+
+.main.couse-page .course-list {
+  height: 120rem;
+}
+
+.main.couse-page .course-item {
+  margin-bottom: 0;
+  height: calc((100% - 30px) / 2) !important;
+}
+
+.main.couse-page .course .ctrl-button {
+  min-width: 16rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 4;
+}
+
+.main.couse-page .course .ctrl-button .ctrl-btn i {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000;
+}
+
+@media screen and (max-width: 1200px) {
+  .main.couse-page .course-list {
+    height: 110rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .main.couse-page .course .pd-80 {
+    padding: 8rem 0 !important;
+  }
+  .main.couse-page .course-list {
+    height: 100rem;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .main.couse-page .course-list {
+    height: 96rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main.couse-page .course-list {
+    height: 90rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .main.couse-page .course-list {
+    height: 80rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .main.couse-page .course-list {
+    height: 110rem;
+  }
+  .main.couse-page .course-item {
+    height: 50% !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main.couse-page .course-list {
+    height: 100rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main.couse-page .course-list {
+    height: 90rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

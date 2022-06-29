@@ -1,0 +1,88 @@
+.main.couse-page {
+    .course {
+        .container {
+            z-index: 3;
+        }
+
+        &-list {
+            height: 120rem;
+        }
+
+        &-item {
+            margin-bottom: 0;
+            height: calc((100% - 30px) / 2) !important;
+        }
+
+        .ctrl-button {
+            min-width: 16rem;
+            width: fit-content;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 4;
+
+            .ctrl-btn {
+                i {
+                    font-size: 1.6rem;
+                    font-weight: 800;
+                    color: #000;
+                }
+            }
+        }
+
+        @include max(1200px) {
+            &-list {
+                height: 110rem;
+            }
+        }
+
+        @include max(980px) {
+            .pd-80 {
+                padding: 8rem 0 !important;
+            }
+
+            &-list {
+                height: 100rem;
+            }
+        }
+
+        @include max(860px) {
+            &-list {
+                height: 96rem;
+            }
+        }
+
+        @include max(767px) {
+            &-list {
+                height: 90rem
+            }
+        }
+
+        @include max(620px) {
+            &-list {
+                height: 80rem;
+            }
+        }
+
+        @include max(580px) {
+            &-list {
+                height: 110rem;
+            }
+
+            &-item {
+                height: 50% !important;
+            }
+        }
+
+        @include max(480px) {
+            &-list {
+                height: 100rem;
+            }
+        }
+
+        @include max(400px) {
+            &-list {
+                height: 90rem;
+            }
+        }
+    }
+}

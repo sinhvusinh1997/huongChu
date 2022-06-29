@@ -85,9 +85,11 @@ select {
 
 .pd-80 {
   padding: 8rem 0;
+
   @include max(1080px) {
     padding: 5rem 0;
   }
+
   @include max(767px) {
     padding: 3rem 0;
   }
@@ -95,11 +97,10 @@ select {
 
 .pd-bot-120 {
   padding-bottom: 12rem;
-  @include max(1080px) {
-  }
 
-  @include max(767px) {
-  }
+  @include max(1080px) {}
+
+  @include max(767px) {}
 }
 
 .pd-bot-220 {
@@ -124,7 +125,7 @@ select {
   @include cir(8rem);
   z-index: 3;
   @include mid-flex;
-  
+
   &::after {
     content: "";
     position: absolute;
@@ -133,17 +134,17 @@ select {
     box-shadow: none;
     z-index: 1;
   }
-  
+
   i {
     font-size: 2rem;
     font-weight: 500;
     color: $color-pri;
     z-index: 2;
   }
-  
+
   &:hover {
     cursor: pointer;
-    
+
     &::after {
       transition: 0.5s;
       box-shadow: 0 0 20px 3px rgba(#000, 0.2);
@@ -155,6 +156,9 @@ select {
     @include cir(6rem);
   }
 }
+
+
+
 
 .no-scroll {
   touch-action: none;
@@ -231,4 +235,24 @@ img {
 
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0;
+}
+
+/*
+  *Swiper pagination custome
+*/
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: #000;
+  opacity: 0.8;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  color: $color-pri;
+  opacity: 1;
 }
