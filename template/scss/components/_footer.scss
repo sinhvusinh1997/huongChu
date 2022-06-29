@@ -71,6 +71,13 @@
         }
     }
 
+    &.curved-line-top {
+
+        &::after {
+            background-color: #FAF4EF;
+        }
+    }
+
     @include max(1200px) {
         .infor>* {
             width: calc(4/12 * 100%);

@@ -263,6 +263,29 @@ select {
   margin-bottom: -15rem;
 }
 
+.curved-line-top {
+  position: relative;
+}
+
+.curved-line-top .container {
+  z-index: 3;
+}
+
+.curved-line-top::after {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 12rem;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  -webkit-clip-path: ellipse(60% 100% at 50% 100%);
+          clip-path: ellipse(60% 100% at 50% 100%);
+  z-index: 1;
+}
+
 .arrow {
   position: absolute;
   top: -6rem;
@@ -1639,6 +1662,10 @@ img {
   height: 4.5rem;
 }
 
+.footer.curved-line-top::after {
+  background-color: #FAF4EF;
+}
+
 @media screen and (max-width: 1200px) {
   .footer .infor > * {
     width: calc(4/12 * 100%);
@@ -2585,6 +2612,24 @@ img {
   z-index: 1;
 }
 
+.ctrl-button {
+  min-width: 16rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 50%;
+  bottom: 10px;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 4;
+}
+
+.ctrl-button .ctrl-btn i {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000;
+}
+
 .menu {
   font-size: 1.4rem;
 }
@@ -3285,36 +3330,8 @@ img {
   background-color: #fff;
 }
 
-.main.home-page .about,
-.main.home-page .course,
-.main.home-page .skill,
-.main.home-page .student {
-  position: relative;
-}
-
-.main.home-page .about .container,
-.main.home-page .course .container,
-.main.home-page .skill .container,
-.main.home-page .student .container {
-  z-index: 3;
-}
-
-.main.home-page .about::after,
-.main.home-page .course::after,
-.main.home-page .skill::after,
-.main.home-page .student::after {
-  position: absolute;
-  content: "";
-  background-color: #fff;
-  width: 100%;
-  height: 12rem;
-  top: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: 0;
-  -webkit-clip-path: ellipse(60% 100% at 50% 100%);
-          clip-path: ellipse(60% 100% at 50% 100%);
-  z-index: 1;
+.main.home-page .btn {
+  display: inline-block;
 }
 
 .main .flower-img {
@@ -3683,11 +3700,14 @@ img {
 }
 
 .main .student .ctrl-button {
-  width: calc(100% + 60px);
+  width: calc(100% + 30px);
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main .student .ctrl-button i {
@@ -4173,25 +4193,6 @@ img {
   padding-top: 4rem;
 }
 
-.main.couse-page .ctrl-button,
-.main.my-course-page .ctrl-button {
-  min-width: 16rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  z-index: 4;
-}
-
-.main.couse-page .ctrl-button .ctrl-btn i,
-.main.my-course-page .ctrl-button .ctrl-btn i {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #000;
-}
-
 .main.couse-page .course .container {
   z-index: 3;
 }
@@ -4351,6 +4352,142 @@ img {
 @media screen and (max-width: 500px) {
   .main.my-course-page .my-course-item {
     width: 100%;
+  }
+}
+
+.main.blog-page .blog .container {
+  z-index: 3;
+}
+
+.main.blog-page .blog-inner {
+  padding-bottom: 23rem;
+}
+
+.main.blog-page .blog-list {
+  height: 160rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .main.blog-page .blog-list {
+    height: 150rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .main.blog-page .blog-list {
+    height: 140rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .main.blog-page .blog-list {
+    height: 100rem;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .main.blog-page .blog-list {
+    height: 90rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main.blog-page .blog-list {
+    height: 83rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main.blog-page .blog-list {
+    height: unset;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.main.blog-page .blog .d-flex {
+  margin: unset;
+}
+
+.main.blog-page .blog .d-item {
+  padding: unset;
+  height: calc((100% - 60px) / 3) !important;
+}
+
+@media screen and (max-width: 820px) {
+  .main.blog-page .blog .d-item {
+    height: calc((100% - 30px) / 2) !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main.blog-page .blog .d-item {
+    height: 100%;
+  }
+}
+
+.main.blog-page .blog-item {
+  width: calc(4/12 * 100%);
+}
+
+.main.blog-page .blog-img {
+  border-radius: 20px;
+  margin-bottom: 3.2rem;
+}
+
+.main.blog-page .blog-img img {
+  border-radius: 20px;
+}
+
+.main.blog-page .blog .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #DAA761;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.main.blog-page .blog .time img {
+  margin-right: 8px;
+}
+
+.main.blog-page .blog .name {
+  font-size: 3.2rem;
+  margin: 1.6rem 0;
+  line-height: 4.3rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main.blog-page .blog .name {
+    font-size: 2.7rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main.blog-page .blog .name {
+    font-size: 2.2rem;
+  }
+}
+
+.main.blog-page .blog .para {
+  -webkit-line-clamp: 2;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.main.blog-page .blog .ctrl-button {
+  bottom: 10rem;
+}
+
+@media screen and (max-width: 767px) {
+  .main.blog-page .blog .ctrl-button .ctrl-pagination {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 /*# sourceMappingURL=style.css.map */

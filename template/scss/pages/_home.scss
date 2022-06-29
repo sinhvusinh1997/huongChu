@@ -14,28 +14,8 @@
         }
     }
 
-    .about,
-    .course,
-    .skill,
-    .student {
-        position: relative;
-
-        .container {
-            z-index: 3;
-        }
-
-        &::after {
-            position: absolute;
-            content: "";
-            background-color: #fff;
-            width: 100%;
-            height: 12rem;
-            top: 0;
-            transform: translateY(-50%);
-            left: 0;
-            clip-path: ellipse(60% 100% at 50% 100%);
-            z-index: 1;
-        }
+    .btn {
+        display: inline-block;
     }
 }
 
@@ -392,10 +372,11 @@
         }
 
         .ctrl-button {
-            width: calc(100% + 60px);
+            width: calc(100% + 30px);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            justify-content: space-between;
 
             i {
                 color: $color-pri;

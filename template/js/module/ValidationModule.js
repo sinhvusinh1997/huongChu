@@ -82,46 +82,46 @@ function checkboxValidate(group, objData) {
 	});
 }
 
-
 export default function ValidationModule(idForm) {
 	const targetForm = document.querySelector(idForm);
 	const objData = {};
 
+	if (targetForm) {
+		const getFormGroup = targetForm.querySelectorAll(".form-group");
+		const getTextInput = [...getFormGroup].filter(item => item.classList.contains("text"));
+		const getCheckBoxInput = [...getFormGroup].filter(item => item.classList.contains("checkbox"));
+		const getButton = targetForm.querySelector("Button");
+		
 	
-	const getFormGroup = targetForm.querySelectorAll(".form-group");
-	const getTextInput = [...getFormGroup].filter(item => item.classList.contains("text"));
-	const getCheckBoxInput = [...getFormGroup].filter(item => item.classList.contains("checkbox"));
-	const getButton = targetForm.querySelector("Button");
+		if (getTextInput.length > 0) {
+			getTextInput.forEach(group => {
+				textValidate(group, objData);
+			});
+		}
 	
-
-	if (getTextInput.length > 0) {
-		getTextInput.forEach(group => {
-			textValidate(group, objData);
-		});
-	}
-
-	if (getCheckBoxInput.length > 0) {
-		getCheckBoxInput.forEach(group => {
-			checkboxValidate(group, objData);
-		});
-	}
-
-	if (getButton) {
-		getButton.addEventListener("click", e => {
-			e.preventDefault()
-			let rs = true;
+		if (getCheckBoxInput.length > 0) {
+			getCheckBoxInput.forEach(group => {
+				checkboxValidate(group, objData);
+			});
+		}
 	
-			if ((Object.keys(objData).length == 0)) {
-				rs = false;
-			}
-	
-			for (const key in objData) {
-				if (!objData[key]) {
+		if (getButton) {
+			getButton.addEventListener("click", e => {
+				e.preventDefault()
+				let rs = true;
+		
+				if ((Object.keys(objData).length == 0)) {
 					rs = false;
-					break;
 				}
-			}
-			popupValidate(rs);
-		})
+		
+				for (const key in objData) {
+					if (!objData[key]) {
+						rs = false;
+						break;
+					}
+				}
+				popupValidate(rs);
+			})
+		}
 	}
 }

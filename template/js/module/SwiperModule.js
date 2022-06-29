@@ -1,4 +1,3 @@
-
 function swiperCourseHomePage() {
     const courseElem = document.querySelector(".main.home-page .course");
     if (courseElem) {
@@ -209,11 +208,52 @@ function swiperCourseMyCoursePage() {
     }
 }
 
+
+function swiperBlogListBlogPage() {
+    const blog = document.querySelector(".main.blog-page .blog");
+
+    if (blog) {
+
+        const blogSwiper = new Swiper(".main.blog-page .blog .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".ctrl-button .swiper-pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+            navigation: {
+                nextEl: ".ctrl-button .swiper-button-next",
+                prevEl: ".ctrl-button .swiper-button-prev",
+            },
+            breakpoints: {
+                500: {
+                    slidesPerView: 2,
+                    grid: {
+                        rows: 2,
+                    }
+                },
+                820: {
+                    slidesPerView: 3,
+                    grid: {
+                        rows: 3,
+                    },
+                }
+            }
+        });
+    }
+
+
+}
+
 export default function SwiperModule() {
     swiperBanner();
     swiperStudentHomePage();
     swiperCouseCousePage();
     swiperCourseMyCoursePage();
+    swiperBlogListBlogPage();
 
     if (window.innerWidth <= 767) {
         swiperCourseHomePage();

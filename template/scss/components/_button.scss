@@ -85,4 +85,21 @@
         bottom: unset;
         z-index: 1;
     }
+
+}
+.ctrl-button {
+    min-width: 16rem;
+    width: fit-content;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%);
+    z-index: 4;
+
+    .ctrl-btn {
+        i {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #000;
+        }
+    }
 }

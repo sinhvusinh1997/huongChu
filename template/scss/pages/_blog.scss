@@ -1,0 +1,103 @@
+.main.blog-page {
+    .blog {
+        .container {
+            z-index: 3;
+        }
+
+        &-inner {
+            padding-bottom: 23rem;
+        }
+
+        &-list {
+            height: 160rem;
+
+            @include max(1080px) {
+                height: 150rem;
+            }
+
+            @include max(980px) {
+                height: 140rem;
+            }
+
+            @include max(820px) {
+                height: 100rem;
+            }
+
+            @include max(690px) {
+                height: 90rem;
+            }
+
+            @include max(600px) {
+                height: 83rem;
+            }
+
+            @include max(500px) {
+                height: unset;
+                flex-wrap: nowrap;
+            }
+        }
+
+        .d-flex {
+            margin: unset;
+        }
+
+        .d-item {
+            padding: unset;
+            height: calc((100% - 60px) / 3) !important;
+
+            @include max(820px) {
+                height: calc((100% - 30px) / 2) !important;
+            }
+
+            @include max(500px) {
+                height: 100%;
+            }
+        }
+
+        &-item {
+            width: calc(4/12 * 100%);
+        }
+
+        &-img {
+            border-radius: 20px;
+            margin-bottom: 3.2rem;
+
+            img {
+                border-radius: 20px;
+            }
+        }
+
+        .time {
+            display: flex;
+            align-items: center;
+            color: $color-pri;
+            text-transform: uppercase;
+            font-weight: 600;
+
+            img {
+                margin-right: 8px;
+            }
+        }
+
+        .name {
+            @include fz-32;
+            margin: 1.6rem 0;
+            line-height: 4.3rem;
+        }
+
+        .para {
+            -webkit-line-clamp: 2;
+            color: rgba(#000, 0.4);
+        }
+
+        .ctrl-button {
+            bottom: 10rem;
+
+            @include max(767px) {
+                .ctrl-pagination {
+                    @include lc(1);
+                }
+            }
+        }
+    }
+}
