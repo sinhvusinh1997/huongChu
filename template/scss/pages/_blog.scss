@@ -92,12 +92,6 @@
 
         .ctrl-button {
             bottom: 10rem;
-
-            @include max(767px) {
-                .ctrl-pagination {
-                    @include lc(1);
-                }
-            }
         }
     }
 }

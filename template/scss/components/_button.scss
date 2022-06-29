@@ -6,7 +6,7 @@
     z-index: 1;
     overflow: hidden;
     display: block;
-    
+
     color: #fff;
     background-color: $color-pri;
 
@@ -84,9 +84,16 @@
         position: unset;
         bottom: unset;
         z-index: 1;
+
+        @include max(767px) {
+            .ctrl-pagination {
+                @include lc(1);
+            }
+        }
     }
 
 }
+
 .ctrl-button {
     min-width: 16rem;
     width: fit-content;

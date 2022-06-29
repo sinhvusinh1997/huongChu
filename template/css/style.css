@@ -2612,6 +2612,15 @@ img {
   z-index: 1;
 }
 
+@media screen and (max-width: 767px) {
+  .ctrl-button .swiper-pagination .ctrl-pagination {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
 .ctrl-button {
   min-width: 16rem;
   width: -webkit-fit-content;
@@ -4480,14 +4489,5 @@ img {
 
 .main.blog-page .blog .ctrl-button {
   bottom: 10rem;
-}
-
-@media screen and (max-width: 767px) {
-  .main.blog-page .blog .ctrl-button .ctrl-pagination {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
 }
 /*# sourceMappingURL=style.css.map */
